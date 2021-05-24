@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma-rtl.min.css">
-<script src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <style>
 body, html {
@@ -90,5 +90,6 @@ body, html {
     </div>
 </div>
 <script src="js/remove.js"></script>
+<script src="js/checkbox.js"></script>
 </body>
 </html>
