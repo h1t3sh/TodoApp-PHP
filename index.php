@@ -1,13 +1,9 @@
-<?php require 'db_conn.php'; ?>
+<?php require 'db_conn.php'; 
 
-<?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $title = $_POST['title'];
-    }
-    
+    // if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    //     $title = $_POST['title'];
+    // }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,35 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma-rtl.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<style>
-body, html {
-  height: 100%;
-  background: #ece4db;
-}
-.card-content {
-    background-color: transparent;
-    padding: 0.7rem;
-}
-.remove-to-do {
-    display: block;
-    float: right;
-    width: 20px;
-    height: 20px;
-    font-family: sans-serif;
-    color: rgb(139, 97, 93);
-    text-decoration: none;
-    text-align: right;
-    padding: 0px 5px 8px 0px;
-    border-radius: 50%;
-    transition: background 1s;
-    cursor: pointer;
-  }
-  
-  .remove-to-do:hover {
-    background: rgb(139, 97, 93);
-    color: #fff;
-  }
-</style>
+
 <body>
 <div class="container  is-widescreen" style="background:#ece4db" >
     <div class="columns is-mobile is-centered">
@@ -78,8 +46,13 @@ body, html {
                     <div class="card-content"style="background:#e8e8e4" >
                         <div class="content is-size-6">
                             <span id=<?= $todo['id'] ?> class="remove-to-do">x</span>
-                            <input class="checkbox" type="checkbox">
-                            <span class="ml-2"><?= $todo['title'] ?></span> <br>
+                            <?php if($todo['checked']){ ?>
+                                <input class="checkbox" type="checkbox" checked>
+                                <span class="ml-2 strikeText"><?= $todo['title'] ?></span> <br>
+                                <?php } else { ?>
+                                <input class="checkbox" type="checkbox">
+                                <span class="ml-2"><?= $todo['title'] ?></span> <br>
+                                <?php } ?> 
                             <small class="is-size-7 ml-5 has-text-grey">created <?= $todo['date_time'] ?></small>                               
                         </div>
                     </div>
