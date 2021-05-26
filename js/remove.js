@@ -14,8 +14,11 @@ for(let i=0; i<spans.length; i++){
 
             if(text){
                 console.log(text);
-                this.parentElement.parentElement.style.display = 'none';
+                // this.parentElement.parentElement.style.display = 'none';
+                this.parentElement.parentElement.remove();
+                window.location.href = "index.php"
             }
         });
+        // window.location.href = "index.php";
     })
 }

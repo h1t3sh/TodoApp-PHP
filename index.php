@@ -41,6 +41,15 @@
         <div class="column is-half">
             <div class="card mt-5 p-2" style="background:#d8e2dc">
                 <?php $todos = $conn->query("SELECT * FROM todos ORDER BY id DESC"); ?>
+                <?php echo $todos->rowCount() ?>
+                <?php if($todos->rowCount() === 0){ ?>
+                    <div class="card mx-4 my-4" style="background:#d8e2dc" >
+                    <div style="text-align: center">
+                    <img src="img/duck.gif" alt="fdfdf" >
+                    </div>
+                            
+                    </div>
+                <?php } ?>
                 <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)){ ?>
                 <div class="card mx-4 my-4">
                     <div class="card-content"style="background:#e8e8e4" >

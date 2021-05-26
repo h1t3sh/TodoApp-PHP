@@ -6,13 +6,13 @@ if(isset($_POST['id'])){
     $id = $_POST['id'];
 
     if(empty($id)){
-        echo 0;
+        header('Location: ../index.php?message=error');
     } else {
         $stmt = $conn->prepare("DELETE FROM todos WHERE id=?");
         $res = $stmt->execute([$id]);
 
         if($res){
-            echo 1;
+            header("Location: ../index.php?message=fromremove.php");
         } else {
             echo 0;
         }
